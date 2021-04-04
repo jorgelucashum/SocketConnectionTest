@@ -54,6 +54,7 @@ namespace TCP1
             this.btncConnect.TabIndex = 1;
             this.btncConnect.Text = "Conectar";
             this.btncConnect.UseVisualStyleBackColor = true;
+            this.btncConnect.Click += new System.EventHandler(this.btncConnect_Click);
             // 
             // txtServer
             // 
@@ -98,6 +99,7 @@ namespace TCP1
             this.btnSend.TabIndex = 1;
             this.btnSend.Text = "Enviar";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // Form1
             // 
@@ -115,6 +117,7 @@ namespace TCP1
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TCP Client";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

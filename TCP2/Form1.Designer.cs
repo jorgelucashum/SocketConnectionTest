@@ -1,5 +1,5 @@
 ﻿
-namespace TCP1
+namespace TCP2
 {
     partial class Form1
     {
@@ -33,7 +33,7 @@ namespace TCP1
             this.btnStart = new System.Windows.Forms.Button();
             this.txtServer = new System.Windows.Forms.Label();
             this.txtInfo = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.lstClientIP = new System.Windows.Forms.ListBox();
@@ -77,12 +77,12 @@ namespace TCP1
             this.txtInfo.Size = new System.Drawing.Size(326, 160);
             this.txtInfo.TabIndex = 0;
             // 
-            // textBox3
+            // txtMessage
             // 
-            this.textBox3.Location = new System.Drawing.Point(67, 218);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(326, 20);
-            this.textBox3.TabIndex = 0;
+            this.txtMessage.Location = new System.Drawing.Point(67, 218);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(326, 20);
+            this.txtMessage.TabIndex = 0;
             // 
             // label1
             // 
@@ -132,7 +132,7 @@ namespace TCP1
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtInfo);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.txtIP);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -149,7 +149,7 @@ namespace TCP1
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label txtServer;
         private System.Windows.Forms.TextBox txtInfo;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.ListBox lstClientIP;

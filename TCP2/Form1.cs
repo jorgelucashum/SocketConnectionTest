@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TCP1
+namespace TCP2
 {
     public partial class Form1 : Form
     {
@@ -38,24 +38,42 @@ namespace TCP1
 
         private void Events_DataReceived(object sender, DataReceivedEventArgs e)
         {
-            txtInfo.Text += $"{e.IpPort}: {Encoding.UTF8.GetString(e.Data)}{Environment.NewLine}";
+            this.Invoke((MethodInvoker)delegate
+            {
+                txtInfo.Text += $"{e.IpPort}: {Encoding.UTF8.GetString(e.Data)}{Environment.NewLine}";
+            });
         }
 
         private void Events_ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
         {
-            txtInfo.Text += $"{e.IpPort} Desconectado. {Environment.NewLine}";
-            lstClientIP.Items.Remove(e.IpPort);
+            this.Invoke((MethodInvoker)delegate
+            {
+                txtInfo.Text += $"{e.IpPort} Desconectado. {Environment.NewLine}";
+                lstClientIP.Items.Remove(e.IpPort);
+            });
         }
 
         private void Events_ClientConnected(object sender, ClientConnectedEventArgs e)
         {
-            txtInfo.Text += $"{e.IpPort} Conectado. {Environment.NewLine}";
-            lstClientIP.Items.Add(e.IpPort);
+            this.Invoke((MethodInvoker)delegate
+            {
+                txtInfo.Text += $"{e.IpPort} Conectado. {Environment.NewLine}";
+                lstClientIP.Items.Add(e.IpPort);
+
+            });
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e) // Botão para enviar
         {
-
+            if (server.IsListening)
+            {
+                if (!string.IsNullOrEmpty(txtMessage.Text) && lstClientIP.SelectedItem != null) // Checar mensagem e selecionar IP da lista
+                {
+                    server.Send(lstClientIP.SelectedItem.ToString(), txtMessage.Text);
+                    txtInfo.Text += $"Servidor: {txtMessage.Text}{Environment.NewLine}";
+                    txtMessage.Text = string.Empty;
+                }
+            }
         }
     }
 }
