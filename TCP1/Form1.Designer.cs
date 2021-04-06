@@ -33,8 +33,6 @@ namespace TCP1
             this.btncConnect = new System.Windows.Forms.Button();
             this.txtServer = new System.Windows.Forms.Label();
             this.txtInfo = new System.Windows.Forms.TextBox();
-            this.txtMessage = new System.Windows.Forms.TextBox();
-            this.txtMsg = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -48,7 +46,7 @@ namespace TCP1
             // 
             // btncConnect
             // 
-            this.btncConnect.Location = new System.Drawing.Point(318, 216);
+            this.btncConnect.Location = new System.Drawing.Point(318, 179);
             this.btncConnect.Name = "btncConnect";
             this.btncConnect.Size = new System.Drawing.Size(75, 23);
             this.btncConnect.TabIndex = 1;
@@ -75,25 +73,9 @@ namespace TCP1
             this.txtInfo.Size = new System.Drawing.Size(326, 112);
             this.txtInfo.TabIndex = 0;
             // 
-            // txtMessage
-            // 
-            this.txtMessage.Location = new System.Drawing.Point(67, 170);
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(326, 20);
-            this.txtMessage.TabIndex = 0;
-            // 
-            // txtMsg
-            // 
-            this.txtMsg.AutoSize = true;
-            this.txtMsg.Location = new System.Drawing.Point(-1, 173);
-            this.txtMsg.Name = "txtMsg";
-            this.txtMsg.Size = new System.Drawing.Size(62, 13);
-            this.txtMsg.TabIndex = 2;
-            this.txtMsg.Text = "Mensagem:";
-            // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(237, 216);
+            this.btnSend.Location = new System.Drawing.Point(237, 179);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 1;
@@ -105,18 +87,16 @@ namespace TCP1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 251);
-            this.Controls.Add(this.txtMsg);
+            this.ClientSize = new System.Drawing.Size(406, 214);
             this.Controls.Add(this.txtServer);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.btncConnect);
             this.Controls.Add(this.txtInfo);
-            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.txtIP);
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TCP Client";
+            this.Text = "Master";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,8 +109,6 @@ namespace TCP1
         private System.Windows.Forms.Button btncConnect;
         private System.Windows.Forms.Label txtServer;
         private System.Windows.Forms.TextBox txtInfo;
-        private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.Label txtMsg;
         private System.Windows.Forms.Button btnSend;
     }
 }
